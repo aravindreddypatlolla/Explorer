@@ -1,0 +1,560 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 60px;
+  padding: 8px;
+  color: white;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* QUICK HACK, NOT FOR PRD */
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+.root-container {
+  height: 100%;
+}
+
+.job-explorer {
+  height: 100%;
+  display: flex;
+  padding-top: 64px;
+  height: calc(100% - 64px);
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.left-pane {
+  display: flex;
+  flex-basis: 25%;
+  background-color: #E8E8E8;
+  box-shadow: 0 8px 8px rgba(0,0,0,0.25), 0 8px 8px rgba(0,0,0,0.25);
+  z-index: 501;
+  padding-left: 28px;
+}
+
+.right-pane {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.filter-bar {
+  height: 50px;
+  background-color: #fff;
+  box-shadow: 0 8px 8px rgba(0,0,0,0.25), 0 8px 8px rgba(0,0,0,0.25);
+  z-index: 500;
+  padding-left: 20px;
+}
+
+.drawer-leftmenu {
+
+}
+
+.iframeDisplay {
+  position: inherit;
+    margin-top: 100px;
+    margin-left: 20px;
+    /* top: 400px; */
+    /* left: 250px; */
+    width: 80vw;
+    height: 80vh;
+    /* z-index: 2000; */
+ }
+
+
+.job-filter {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 100%;
+}
+
+.filter-title {
+    font-size: 18px;
+    color: #979595;
+    padding-left: 16px;
+}
+
+.filter-overlay {
+    position: fixed;
+    top: 70px;
+    background: #fff;
+    left: 0px;
+    max-height: calc(100% - 114px);
+    box-shadow: 0 8px 8px rgba(0,0,0,0.25), 0 8px 8px rgba(0,0,0,0.25);
+    width: 680px;
+    display: flex;
+    flex-direction: column;
+}
+
+.filter-container {
+    overflow-y: auto;
+}
+
+.checkBoxRightOfWay {
+  position: fixed;
+  top: 325px;
+  width: 280px;
+  margin: 10px;
+  margin-left: 5px !important;
+  font-size: 14px !important;
+  text-transform: uppercase !important;
+  color: #4d4c4c;
+  padding: 0.25em;
+  height: 26px;
+  font-weight: bold !important;
+  font-family: sans-serif !important;
+}
+
+.checkBoxRightOfWay span{
+  position: fixed;
+  top: 325px;
+  width: 380px;
+  margin: 10px;
+  margin-left: 5px !important;
+  font-size: 12px !important;
+  text-transform: uppercase !important;
+  color: #4d4c4c;
+  padding: 0.25em;
+  height: 15px;
+  font-weight: bold !important;
+  font-family: sans-serif !important;
+}
+
+.map-holder {
+  position: relative;
+  display: flex;
+  flex: 1;
+}
+
+.map {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: steelblue;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* Infobox */
+.infobox-content {
+  text-align: center;
+}
+
+.infobox-table {
+  border-spacing: 0;
+  border-collapse: collapse;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  text-align: left;
+}
+
+.infobox-table td:nth-child(1) {
+  padding-right: 40px;
+  font-weight: 500;
+}
+
+.ui-shell {
+  height: 100%;
+}
+
+.prop-pic-container {
+    margin: 20px 0px;
+    /*background-color: #e1e1e1;*/
+    width: 244px;
+    height: 220px;
+}
+
+img.prop-pic {
+    /*width: 186px;
+    margin: 20px 0px;*/
+
+    max-width: 85%;
+    max-height: 100%;
+}
+/*  ----------------------------------  */
+/*  Filter Styling  */
+
+.filter {
+    padding: 1em 0;
+    border-bottom: 1px solid #d1d5d5;
+    display: flex;
+    flex-direction: row;
+}
+
+.filter h3 {
+    font-size: 12px;
+    text-transform: uppercase;
+    margin-bottom: .5em;
+    color: #4d4c4c;
+    margin-top: 16px;
+    margin-bottom: 2px;
+}
+
+.filter-title {
+  flex-basis: 25%;
+  cursor: pointer;
+}
+
+.filter-inputs {
+  margin-left: 18px;
+  flex: 1;
+}
+
+.filter input {
+  display: block;
+  font-size: 14px;
+  padding: 0.25em;
+  width: 132px;
+  border-radius: 3px;
+  border: 1px solid #dddddd;
+  margin-right: 14px;
+  height: 26px;
+}
+
+.range-inputs {
+  display: flex;
+}
+
+.range-radios {
+    flex-direction: row !important;
+}
+
+span.clear-filter {
+    font-size: 12px;
+    color: #0707e5;
+    cursor: pointer;
+}
+
+span.clear-disabled {
+    color: #b3b3b4;
+}
+
+.filter-actions {
+  display: flex;
+  min-height: 42px;
+  font-size: 12px;
+  box-shadow: 0px -4px 3px rgba(0, 0, 0, 0.20);
+  border-top: 1px solid #e8e8e8;
+}
+
+.filter-actions .clear {
+  background-color: #fff;
+  display: flex;
+  flex-basis: 15%;
+  justify-content: center;
+  align-items: center;
+  color: #E30613;
+  cursor: pointer;
+}
+
+.filter-actions .cancel {
+  background-color:#404040;
+  display: flex;
+  flex-basis: 15%;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  cursor: pointer;
+}
+
+.filter-actions .apply {
+  background-color: #D80027;
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  cursor: pointer;
+}
+
+.userType-radios {
+  float: none;
+  position: absolute;
+  right: 100px;
+  top: 80px;
+  z-index: 400;
+   /*background-color: #fff;
+ -webkit-box-shadow: 0 8px 8px rgba(0,0,0,0.25), 0 8px 8px rgba(0,0,0,0.25);
+  box-shadow: 0 8px 8px rgba(0,0,0,0.25), 0 8px 8px rgba(0,0,0,0.25); */
+  margin-right: 10px;
+  padding: 0px;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: small;
+}
+
+.userType-radios span {
+  padding: 2px !important;
+}
+
+.userType-radios div {
+  flex-direction: row !important;
+}
+
+.userType-radios button {
+  height: 25px;
+  margin-top: -5px;
+  margin-left: 20px;
+}
+/*  ----------------------------------  */
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 10px;
+}
+ 
+::-webkit-scrollbar-track {
+    background-color: #ebebeb;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: #9e9e9e; 
+}
+
+/* Agggregations */
+.aggregations {
+    position: fixed;
+    right: 0px;
+    top: 210px;
+    z-index: 400;
+    background-color: #fff;
+    box-shadow: 0 8px 8px rgba(0,0,0,0.25), 0 8px 8px rgba(0,0,0,0.25);
+    padding: 12px;
+    margin-right: 10px;
+    padding: 0px;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+}
+
+.aggregations .action-export {
+    background-color: #D80027;
+    border-radius: 6px 6px 0px 0px;
+    padding: 10px 8px;
+    color: #fff;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+		font-size: 13px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.button {
+  margin: 10;
+}
+
+.customDate {
+  width: 115px;
+  margin-left: 12px !important;
+  margin-top: -5px;
+  font-size: 12px;
+}
+
+.datePicker {
+  width: 155px;
+  display: block;
+  margin-left: 10px !important;
+}
+
+.datePicker button {
+  margin-left: -20px !important;
+}
+
+.exportToExcel {
+  font-size: 16px;
+  color: #ffffff;
+  font-weight: bold; 
+}
+
+.logo-header-profile {
+  position: absolute;
+  right: 100px;
+  top: 25px;
+  font-size: 16px;
+  font-weight: 400;
+  vertical-align: middle !important;
+}
+
+.logo-header-area img{
+  margin-top: 10px;
+  padding-right: 5px;
+}
+
+.logo-header-profile img{
+  margin-top: -10px;
+}
+
+.icon {
+  margin: 2;
+}
+
+.chkPictures {
+  padding: 8px;
+  margin: 10;
+  align-items: baseline;
+  border-radius: 6px 6px 0px 0px;
+}
+
+.stat {
+  padding: 8px;
+}
+
+
+leftbarDrawer .MuiPaper-root-25{
+  background-color: black !important;
+}
+
+.leftmenuitemtext {
+  display: inline-block;
+  font-family: 'Open Sans', sans-serif;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  position: absolute;
+  left: 70px;
+}
+
+.leftmenuitemtext:hover {
+  font-size: 15px;
+  font-weight: bolder;
+}
+
+.leftbarDrawer {
+  border: 1px !important;
+  height: 100vh !important;
+}
+
+.leftmenuDividerLine {
+  width: 80%;
+  background-color: gray !important;
+  margin-left: 10px !important;
+  margin-top: 10px !important; 
+  margin-bottom: 10px !important;
+}
+
+.backspaceIcon {
+  background-color: white !important;
+}
+
+.jlllogo {
+  margin-left: -10px;
+}
+
+.filterListIcon {
+  left: 40px;
+  top: 12px;
+  position: fixed;
+}
+
+.filterHeaderTab {
+  background-color: black;
+}
+
+.filterImage {
+  position: absolute;
+  top: 70px;
+  left: -4px;
+  cursor: pointer;
+}
+
+.react-switch {
+  top: 1px;
+}
+
+.filterListText{
+  left: 110px;
+  top: 12px;
+  position: fixed;
+  color:white;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+
+.stat strong {
+		display: block;
+		font-size: 18px;
+		line-height: 1.2;
+  	font-family: 'Open Sans', sans-serif;
+    font-weight: 200;
+  	align-items: baseline;
+}
+
+.stat strong span {
+  display: block;
+  font-size: 18px;
+  line-height: 1.2;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 200;
+  align-items: baseline;
+}
+
+.stat span {
+		display: block;
+		font-weight: 100;
+		text-transform: uppercase;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+		font-size: 10px;
+	}
+/* ----------------------------- */
+.pointer {
+  cursor: pointer;
+}
+
+.logo-header {
+  font-weight: 300 !important;
+  font-size: 1.2em !important;
+}
+
+.logo-header-title {
+  background-color: yellow;
+}
+
+.toolBarContent {
+  background-color: white;
+}
+
+.toolBarTitle {
+  color: white !important;
+  margin-left: 15px !important;
+  font-weight: 300 !important;
+  font-size: 1.2em !important;
+  font-weight: bolder !important;
+  position: relative;
+}
+
+.MuiInput-underline-80 {
+  border: none !important;
+}
